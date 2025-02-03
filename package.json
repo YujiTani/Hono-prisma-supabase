@@ -2,7 +2,7 @@
   "name": "hono-api",
   "scripts": {
     "dev": "bun run --hot src/index.ts",
-    "lint": "eslint src",
+    "lint": "eslint src --fix",
     "format": "prettier --write src",
     "prisma:migrate": "prisma migrate dev --name",
     "prisma:generate": "prisma generate",
@@ -43,7 +43,7 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
-      "eslint src",
+      "eslint src --fix",
       "prettier --write src"
     ]
   }
