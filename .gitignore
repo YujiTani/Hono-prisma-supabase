@@ -1,2 +1,22 @@
-# deps
+# 依存関係ディレクトリ
 node_modules/
+
+# ログファイル
+*.log
+logs/
+
+# テスト結果の出力
+coverage/
+
+# ビルド成果物（必要に応じて調整）
+dist/
+build/
+
+# 環境変数ファイル（機密情報を含む可能性があるため）
+.env
+.env.local
+.env.*.local
+
+# OS固有の不要ファイル
+.DS_Store
+Thumbs.db
