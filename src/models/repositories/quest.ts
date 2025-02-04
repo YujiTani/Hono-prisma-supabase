@@ -30,9 +30,6 @@ export const findAll = (payload: LimitOffsetRequest): Promise<Quest[]> =>
   prisma.quest.findMany({
     where: {
       deletedAt: null,
-      name: {
-        contains: payload.query,
-      },
     },
     skip: payload.offset,
     take: payload.limit,

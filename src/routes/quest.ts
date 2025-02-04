@@ -34,16 +34,23 @@ const app = new Hono()
         await c.req.json();
 
       // TODO: バリデーションで対応予定, 一時的に例外で処理している
-      if (!name || !description || !state) {
-        throw new Error("Invalid request");
+      if (!name || !description) {
+        c.json({ message: "Invalid request" }, 400);
+        return;
       }
 
-      const quest = await questUsecase.create({ name, description, state });
+      const quest = await questUsecase.create({
+        name,
+        description,
+        state: state ?? "DRAFT",
+      });
+
       const response: questUsecase.QuestResponse =
         questUsecase.getQuestResponse(quest);
+
       return c.json(response, 201);
     } catch (_error) {
-      throw new Error("Failed to create quest");
+      c.json({ message: "Failed to create quest" }, 400);
     }
   });
 // .get("/:id", async (c) => {

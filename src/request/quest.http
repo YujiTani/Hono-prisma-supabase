@@ -7,11 +7,11 @@ Authorization: Basic user:password
 ### POST 新規クエストを作成する
 POST http://localhost:8787/api/quests
 Content-Type: application/json
+Authorization: Basic user:password
 
 {
   "name": "New Quest",
-  "description": "This is a new quest description.",
-  "state": "active"
+  "description": "This is a new quest description."
 } 
 
 ### GET クエストを取得する
