@@ -95,7 +95,7 @@ export default [...fixupConfigRules(compat.extends(
         }],
 
         "jest/consistent-test-it": ["error", {
-            fn: "it",
+            fn: "test",
         }],
     },
 }];
