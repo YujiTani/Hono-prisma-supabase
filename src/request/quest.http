@@ -1,0 +1,15 @@
+### GET クエスト一覧を取得する
+GET http://localhost:8787/api/quests
+?query=sample&limit=10&offset=0
+Content-Type: application/json
+Authorization: Basic user:password
+
+### POST 新規クエストを作成する
+POST http://localhost:8787/api/quests
+Content-Type: application/json
+
+{
+  "name": "New Quest",
+  "description": "This is a new quest description.",
+  "state": "active"
+} 
