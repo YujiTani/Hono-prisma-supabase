@@ -25,7 +25,7 @@ const app = new Hono()
         questUsecase.getQuestListResponse(quests, total, limit, offset);
       return c.json(response, 200);
     } catch (_error) {
-      throw new Error("Failed to get quest list");
+      c.json({ message: "Failed to get quest list" }, 400);
     }
   })
   .post("/", async (c) => {
