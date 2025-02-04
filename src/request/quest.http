@@ -13,3 +13,8 @@ Content-Type: application/json
   "description": "This is a new quest description.",
   "state": "active"
 } 
+
+### GET クエストを取得する
+GET http://localhost:8787/api/quests/1
+Content-Type: application/json
+Authorization: Basic user:password
