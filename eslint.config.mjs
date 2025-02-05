@@ -27,12 +27,17 @@ export default [...fixupConfigRules(compat.extends(
     "plugin:jest/recommended",
     "plugin:jest/style",
     "prettier",
-)), {
-    plugins: {
-        import: fixupPluginRules(_import),
-        "unused-imports": unusedImports,
-        "@typescript-eslint": fixupPluginRules(typescriptEslint),
-        jest: fixupPluginRules(jest),
+    )),
+    {
+        ignores: ['eslint.config.mjs'],
+    },
+    {
+        files: ['**/*.{js,jsx,ts,tsx}'],
+        plugins: {
+            import: fixupPluginRules(_import),
+            "unused-imports": unusedImports,
+            "@typescript-eslint": fixupPluginRules(typescriptEslint),
+            jest: fixupPluginRules(jest),
     },
 
     languageOptions: {
