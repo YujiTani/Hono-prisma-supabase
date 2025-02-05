@@ -15,6 +15,7 @@ const app = new Hono();
  * 認証が失敗した場合、以降のミドルウェアは実行されない
  * https://hono-ja.pages.dev/docs/middleware/builtin/combine
  */
+// TODO: カスタマイズ認証を作成して都度改修しやすくしたい
 app.use("*", async (c, next) => {
   await every(
     basicAuth({ username: "user", password: "password" }),
