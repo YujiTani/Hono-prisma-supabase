@@ -23,3 +23,8 @@ export type BaseResponse = {
   limit: number;
   offset: number;
 };
+
+/**
+ * 公開ステータス
+ */
+export type State = "DRAFT" | "READY" | "PUBLISHED";
