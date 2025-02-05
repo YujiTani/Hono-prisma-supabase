@@ -1,6 +1,9 @@
 import { v7 as uuidv7 } from "uuid";
 
-import type { BaseResponse, LimitOffsetRequest } from "@/models/types/common";
+import type {
+  BaseResponse,
+  LimitOffsetRequest,
+} from "@/models/usecases/types/common";
 import type { Prisma } from "@prisma/client";
 
 import * as questRepository from "@/models/repositories/quest";
@@ -20,7 +23,6 @@ export type UpdateRequest = Pick<
   Prisma.QuestUpdateInput,
   "name" | "description" | "state"
 > & {
-  id?: number;
   uuid?: string;
 };
 

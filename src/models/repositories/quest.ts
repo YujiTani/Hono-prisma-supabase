@@ -1,7 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 
-import type { LimitOffsetRequest } from "@/models/types/common";
 import type { CreateRequest } from "@/models/usecases/quests";
+import type { LimitOffsetRequest } from "@/models/usecases/types/common";
 import type { Prisma } from "@prisma/client";
 
 const prisma = new PrismaClient();
